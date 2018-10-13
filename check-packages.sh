@@ -7,7 +7,7 @@ packageList=(sudo git nodejs npm xdg-utils arp-scan nano konsole chromium java-r
 optPackages=(make ninja liferea archey3 unrar)
 # Not dependencies for symlink-files
 extraPackages=(gimp redshift gthumb cmake intellij-idea-community-edition deepin-screenshot file-roller
-  libreoffice-still lollypop gedit transmission-cli transmission-gtk)
+  libreoffice-still lollypop gedit transmission-cli transmission-gtk gparted)
 aurPackages=(trizen discord)
 
 sudo pacman -S --needed "${packageList[@]}"
