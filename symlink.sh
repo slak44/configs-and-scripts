@@ -32,5 +32,6 @@ src2dest["Scripts/js/cwd2mp3.js"]="/home/$user/Scripts/cwd2mp3"
 dir=$(dirname "$0")
 for key in "${!src2dest[@]}"
 do
-  ln -s "$dir/symlink-files/$key" "${src2dest[$key]}" || echo "File probably exists at ${src2dest[$key]}"
+  [ -L "${src2dest[$key]}" ] && rm "${src2dest[$key]}"
+  ln -sr "$dir/symlink-files/$key" "${src2dest[$key]}" || echo "File probably exists at ${src2dest[$key]}"
 done
