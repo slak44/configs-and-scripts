@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Dependencies for symlink-files
-packageList=(sudo git nodejs npm xdg-utils arp-scan nano konsole chromium java-runtime-common xorg-xinput archey3 otf-fira-code
+packageList=(sudo git nodejs npm xdg-utils arp-scan nano konsole chromium java-runtime-common xorg-xinput otf-fira-code
   vim htop parcellite rsync pigz libnotify steam steam-native-runtime tokei imagemagick grub)
 aurPackages=(trizen)
 # Soft dependencies
