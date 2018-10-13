@@ -33,12 +33,12 @@ export EDITOR=nano
 export BROWSER=chromium
 
 # Path
-PATH=/home/slak/Scripts/path-overrides:$PATH:/home/slak/Scripts
+PATH=$HOME/Scripts/path-overrides:$PATH:$HOME/Scripts
 export PATH
 
 TERM_NAME=$(basename "$(cat "/proc/$PPID/comm")")
 export TERM_NAME
-PROMPT_COMMAND="PS1=\"\$(/home/slak/.gen-ps1.sh)\""
+PROMPT_COMMAND="PS1=\"\$($HOME/.gen-ps1.sh)\""
 
 # This would start X when logging in on tty1, except the login manager does it for us
 #[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

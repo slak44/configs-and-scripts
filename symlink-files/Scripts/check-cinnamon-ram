@@ -2,7 +2,8 @@
 
 date > /tmp/ran-script
 
-CINNAMON_PROC_ID=$(ps aux | grep 'cinnamon --replace' | grep -E "slak\s+[0-9]+" -o | grep -E "[0-9]+" -o | head -1)
+user=$(whoami)
+CINNAMON_PROC_ID=$(ps aux | grep 'cinnamon --replace' | grep -E "$user\s+[0-9]+" -o | grep -E "[0-9]+" -o | head -1)
 
 echo "Found cinnamon at: $CINNAMON_PROC_ID"
 

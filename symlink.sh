@@ -29,7 +29,8 @@ src2dest["Scripts/js/share.js"]="/home/$user/Scripts/share"
 src2dest["Scripts/js/share-file.js"]="/home/$user/Scripts/share-file"
 src2dest["Scripts/js/cwd2mp3.js"]="/home/$user/Scripts/cwd2mp3"
 
+dir=$(dirname "$0")
 for key in "${!src2dest[@]}"
 do
-  ln -s "/home/$user/Config/symlink-files/$key" "${src2dest[$key]}" || echo "File probably exists at ${src2dest[$key]}"
+  ln -s "$dir/symlink-files/$key" "${src2dest[$key]}" || echo "File probably exists at ${src2dest[$key]}"
 done
