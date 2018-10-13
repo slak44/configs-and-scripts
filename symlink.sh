@@ -37,7 +37,10 @@ do
     echo "File exists at ${src2dest[$key]}. Remove?"
     select yn in "Yes" "No"; do
       case $yn in
-        "Yes" ) rm "${src2dest[$key]}"; break;;
+        "Yes" )
+          mkdir -p "/tmp/backups/${src2dest[$key]}"
+          mv "${src2dest[$key]}" "/tmp/backups/${src2dest[$key]}"
+          break;;
         "No" ) break;;
       esac
     done
