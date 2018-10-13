@@ -1,0 +1,10 @@
+" Source is https://stackoverflow.com/questions/234564/tab-key-4-spaces-and-auto-indent-after-curly-braces-in-vim
+filetype plugin indent on
+set tabstop=2
+set expandtab
+
+syntax on
+" CTRL-D to delete line
+map <C-D> dd
+" CTRL-Z to undo
+map <C-Z> u

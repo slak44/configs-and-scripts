@@ -1,0 +1,3 @@
+#!/bin/bash
+tokei --sort=code --exclude package-lock.json $@
+

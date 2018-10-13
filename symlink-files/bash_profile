@@ -1,0 +1,44 @@
+#!/usr/bin/bash
+
+# Command overrides (also non-interactive)
+alias make='make -j8'
+alias ninja='ninja -j8'
+
+# If not running interactively, don't do anything else
+[[ $- != *i* ]] && return
+
+# Command overrides (interactive)
+alias ls='ls -h --color=auto --group-directories-first'
+alias ll='ls -h --color=auto --group-directories-first -l'
+alias la='ls -h --color=auto --group-directories-first -A'
+alias lla='ls -h --color=auto --group-directories-first -l -A'
+alias nano='nano -wzA'
+alias unrar='unrar x'
+alias ip='ip -c'
+alias gulp='gulp --color'
+
+# Aliases
+alias large-files='sudo du --si --one-file-system --threshold 1GB'
+alias list-npm-globals="npm ls -g --depth=0 | tail -n +2 | sed -E 's/.*─ (.*?)@.*/\1/g' | tr '\n' ' '"
+alias update-npm-globals='sudo npm install -g $(list-npm-globals)'
+alias upd='trizen -Syu'
+alias gpu-high-perf='echo "high" | sudo tee /sys/class/drm/card1/device/power_dpm_force_performance_level'
+alias open="xdg-open"
+alias netscan="sudo arp-scan --localnet --interface=enp0s25"
+
+# Config
+export TERM=konsole
+export EDITOR=nano
+#export VISUAL=atom
+export BROWSER=chromium
+
+# Path
+PATH=/home/slak/Scripts/path-overrides:$PATH:/home/slak/Scripts
+export PATH
+
+TERM_NAME=$(basename "$(cat "/proc/$PPID/comm")")
+export TERM_NAME
+PROMPT_COMMAND="PS1=\"\$(/home/slak/.gen-ps1.sh)\""
+
+# This would start X when logging in on tty1, except the login manager does it for us
+#[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

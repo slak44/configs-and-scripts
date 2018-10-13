@@ -1,0 +1,15 @@
+[user]
+	email = sylviu44@gmail.com
+	name = Stefan Silviu
+[push]
+	default = simple
+[core]
+	editor = vim
+[sendemail]
+	from = Stefan Silviu <sylviu44@gmail.com>
+	smtpserver = smtp.gmail.com
+	smtpuser = sylviu44@gmail.com
+	smtppass = sakcfrxhjsbmhpyy
+	smtpencryption = tls
+	smtpserverport = 587
+
