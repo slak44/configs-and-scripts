@@ -1,2 +1,2 @@
 #!/bin/bash
-tokei --sort=code --exclude package-lock.json "$@"
+tokei --sort=code --exclude package-lock.json --exclude gradlew --exclude gradlew.bat "$@"
