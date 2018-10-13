@@ -45,5 +45,5 @@ do
       esac
     done
   fi
-  ln -sr "$dir/symlink-files/$key" "${src2dest[$key]}" || echo "File probably still exists at ${src2dest[$key]}"
+  ln -sr "$dir/files/$key" "${src2dest[$key]}" || echo "File probably still exists at ${src2dest[$key]}"
 done
