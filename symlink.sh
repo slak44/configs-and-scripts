@@ -33,5 +33,14 @@ dir=$(dirname "$0")
 for key in "${!src2dest[@]}"
 do
   [ -L "${src2dest[$key]}" ] && rm "${src2dest[$key]}"
-  ln -sr "$dir/symlink-files/$key" "${src2dest[$key]}" || echo "File probably exists at ${src2dest[$key]}"
+  if [ -f "${src2dest[$key]}" ]; then
+    echo "File exists at ${src2dest[$key]}. Remove?"
+    select yn in "Yes" "No"; do
+      case $yn in
+        "Yes" ) rm "${src2dest[$key]}"; break;;
+        "No" ) break;;
+      esac
+    done
+  fi
+  ln -sr "$dir/symlink-files/$key" "${src2dest[$key]}" || echo "File probably still exists at ${src2dest[$key]}"
 done
