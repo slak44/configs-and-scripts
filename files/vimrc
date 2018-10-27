@@ -1,10 +1,37 @@
-" Source is https://stackoverflow.com/questions/234564/tab-key-4-spaces-and-auto-indent-after-curly-braces-in-vim
 filetype plugin indent on
+
 set tabstop=2
 set expandtab
 
+set number
+highlight LineNr ctermbg=Black
+
 syntax on
+
+" Backspace in normal mode
+nnoremap <bs> d1<Left>
 " CTRL-D to delete line
-map <C-D> dd
+inoremap <C-D> <Esc>dd<Insert>
+nnoremap <C-D> dd
 " CTRL-Z to undo
-map <C-Z> u
+inoremap <C-Z> <Esc>u<Insert>
+nnoremap <C-Z> u
+" CTRL-Y to redo
+inoremap <C-Y> <Esc><C-R><Insert>
+nnoremap <C-Y> <C-R>
+" CTRL-S to save
+inoremap <C-S> <Esc>:w<Enter><Insert>
+nnoremap <C-S> :w<Enter>
+" CTRL-arrow to move up down lines
+inoremap [1;5A <Esc>k<Insert>
+inoremap [1;5B <Esc>j<Insert>
+nnoremap [1;5A k
+nnoremap [1;5B j
+" CTRL-arrow to move word by word
+" CTRL-Left
+inoremap [1;5D <Esc>b<Insert>
+nnoremap [1;5D b
+" CTRL-Right
+inoremap [1;5C <Esc>el<Insert>
+nnoremap [1;5C el
+
