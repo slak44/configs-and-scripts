@@ -33,11 +33,14 @@ export EDITOR=nano
 export BROWSER=chromium
 
 # Path
-PATH=$HOME/Scripts/path-overrides:$PATH:$HOME/Scripts
+PATH=$HOME/Scripts/path-overrides:$PATH:$HOME/Scripts:/opt/jetbrains-toolbox/scripts
 export PATH
 
+# Stupid hack
+# Doesn't even work with ssh
 TERM_NAME=$(basename "$(cat "/proc/$PPID/comm")")
 export TERM_NAME
+
 PROMPT_COMMAND="PS1=\"\$($HOME/.gen-ps1.sh)\""
 
 # This would start X when logging in on tty1, except the login manager does it for us

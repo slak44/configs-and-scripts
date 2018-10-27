@@ -37,4 +37,9 @@ fi
 workingTreeDirty=$([ $changed ] && echo "${reset}working tree ${base}dirty ${sep} " || echo '')
 
 echo "$sep $base\u$accent@$base\h $sep $base\w $sep ${branchText}${reset}${ahead}${behind}${workingTreeDirty}${reset}"
+
+#FIXME
+#approxTextLength=$(awk -v toSplit="${#branch} ${#upstream[0]} ${#upstream[1]} ${#branchAB[0]} ${#branchAB[1]}" \
+#  'BEGIN { s = 0; t = split(toSplit, a, " "); for (i = 1; i <= t; i++) s += a[i]; print s; }')
+
 [ ${upstream[0]} ] && echo "$sep ${reset}command $sep ${reset}"
