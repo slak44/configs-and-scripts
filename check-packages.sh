@@ -2,7 +2,7 @@
 
 # Dependencies for symlink-files
 packageList=(sudo git nodejs npm xdg-utils arp-scan nano konsole chromium java-runtime-common xorg-xinput otf-fira-code
-  vim htop parcellite rsync pigz libnotify steam steam-native-runtime tokei imagemagick grub)
+  vim htop parcellite rsync pigz libnotify steam steam-native-runtime tokei imagemagick grub wmctrl ffmpeg)
 # Soft dependencies
 optPackages=(make ninja liferea archey3 unrar)
 # Not dependencies for symlink-files
