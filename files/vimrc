@@ -34,4 +34,10 @@ nnoremap [1;5D b
 " CTRL-Right
 inoremap [1;5C <Esc>el<Insert>
 nnoremap [1;5C el
+" CTRL-End goes to end of file
+inoremap [1;5F <Esc>G<Insert>
+nnoremap [1;5F G
+" CTRL-Home goes to start of file
+inoremap [1;5H <Esc>gg<Insert>
+nnoremap [1;5H gg
 
