@@ -1,12 +1,15 @@
 #!/bin/bash
 isGoodTerminal=$([ $TERM_NAME == 'konsole' ] || [ $TERM_NAME == 'java' ] && echo true)
 noFiraCode=$([ ! $isGoodTerminal ] && echo true)
-hasTrueColor=$([ $isGoodTerminal ] || [ $COLORFUL ] && echo true)
+hasTrueColor=$([ $COLORFUL ] || [ "$(shopt login_shell | grep off -o)" == "off" ] && echo true)
+
+isRoot=$([ $EUID -eq 0 ] && echo true)
 
 base=$([ $hasTrueColor ] && echo "\[\033[38;2;0;231;255m\]" || echo "\[\033[38;2;0;0;175m\]")
 accent=$([ $hasTrueColor ] && echo "\[\033[38;2;255;132;42m\]" || echo "\[\033[38;2;255;119;0m\]")
 white="\[\033[38;2;255;255;255m\]"
 reset="\[\033[0m\]"
+user=$([ $isRoot ] && echo "$white" || echo "$base")
 
 sep=$([ $noFiraCode ] && echo "$accent>" || echo -e "$accent\uE0B1")
 branchIcon=$([ $noFiraCode ] && echo "${white}branch " || echo -e "${white}\uE0A0")
@@ -36,7 +39,7 @@ if [[ ${branchAB[1]} -ne 0 ]]; then
 fi
 workingTreeDirty=$([ $changed ] && echo "${reset}working tree ${base}dirty ${sep} " || echo '')
 
-echo "$sep $base\u$accent@$base\h $sep $base\w $sep ${branchText}${reset}${ahead}${behind}${workingTreeDirty}${reset}"
+echo "$sep $user\u$accent@$base\h $sep $base\w $sep ${branchText}${reset}${ahead}${behind}${workingTreeDirty}${reset}"
 
 #FIXME
 #approxTextLength=$(awk -v toSplit="${#branch} ${#upstream[0]} ${#upstream[1]} ${#branchAB[0]} ${#branchAB[1]}" \
