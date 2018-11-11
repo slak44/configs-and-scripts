@@ -29,7 +29,8 @@ alias netscan="sudo arp-scan --localnet --interface=enp0s25"
 
 # Config
 export TERM=konsole
-export EDITOR=nano
+export EDITOR=vim
+# Don't define VISUAL; some programs do dumb things with it (like git)
 #export VISUAL=atom
 export BROWSER=chromium
 
@@ -38,7 +39,7 @@ PATH=$HOME/Scripts/path-overrides:$PATH:$HOME/Scripts:/opt/jetbrains-toolbox/scr
 export PATH
 
 # Stupid hack
-# Doesn't even work with ssh
+# Doesn't work with ssh or with nested shells, or literally anything more complicated than running in a real terminal
 TERM_NAME=$(basename "$(cat "/proc/$PPID/comm")")
 export TERM_NAME
 
