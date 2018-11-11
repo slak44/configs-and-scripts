@@ -16,6 +16,7 @@ alias nano='nano -wzA'
 alias unrar='unrar x'
 alias ip='ip -c'
 alias gulp='gulp --color'
+alias radeontop='radeontop --color'
 
 # Aliases
 alias large-files='sudo du --si --one-file-system --threshold 1GB'
