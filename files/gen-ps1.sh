@@ -1,12 +1,12 @@
 #!/bin/bash
 isGoodTerminal=$([ $TERM_NAME == 'konsole' ] || [ $TERM_NAME == 'java' ] && echo true)
 noFiraCode=$([ ! $isGoodTerminal ] && echo true)
-hasTrueColor=$([ $COLORFUL ] || [ "$(shopt login_shell | grep off -o)" == "off" ] && echo true)
+hasTrueColor=$([ "$(echo $1 | head -c 1)" = "-" ] && echo "false" || echo "true")
 
 isRoot=$([ $EUID -eq 0 ] && echo true)
 
-base=$([ $hasTrueColor ] && echo "\[\033[38;2;0;231;255m\]" || echo "\[\033[38;2;0;0;175m\]")
-accent=$([ $hasTrueColor ] && echo "\[\033[38;2;255;132;42m\]" || echo "\[\033[38;2;255;119;0m\]")
+base=$([ "$hasTrueColor" = "true" ] && echo "\[\033[38;2;0;231;255m\]" || echo "\[\033[38;2;0;0;175m\]")
+accent=$([ "$hasTrueColor" = "true" ] && echo "\[\033[38;2;255;132;42m\]" || echo "\[\033[38;2;255;119;0m\]")
 white="\[\033[38;2;255;255;255m\]"
 reset="\[\033[0m\]"
 user=$([ $isRoot ] && echo "$white" || echo "$base")

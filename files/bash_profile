@@ -43,7 +43,7 @@ export PATH
 TERM_NAME=$(basename "$(cat "/proc/$PPID/comm")")
 export TERM_NAME
 
-PROMPT_COMMAND="PS1=\"\$($HOME/.gen-ps1.sh)\""
+PROMPT_COMMAND="PS1=\"\$($HOME/.gen-ps1.sh $0)\""
 
 # Disable CTRL-S/CTRL-Q output on/off commands
 stty -ixon
