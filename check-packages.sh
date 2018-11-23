@@ -6,7 +6,6 @@ basicPackageList=(
   rsync tokei imagemagick grub ffmpeg)
 # Basic X stuff
 basicVisualPackageList=(
-  cinnamon
   xorg-xinput xdg-utils libnotify wmctrl konsole chromium parcellite
   gthumb gimp redshift deepin-screenshot file-roller gedit)
 # Non-essential non-X stuff
@@ -16,7 +15,7 @@ extraPackageList=(
 # Non-essential X stuff
 extraVisualPackageList=(
   libreoffice-still lollypop transmission-gtk gparted liferea
-  steam steam-native-runtime)
+  steam steam-native-runtime gnome-disks)
 aurPackages=(trizen discord atom-editor-bin jetbrains-toolbox)
 
 echo "Install basic packages?"
