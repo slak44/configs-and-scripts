@@ -1,8 +1,9 @@
 [Appearance]
 BoldIntense=false
 ColorScheme=DarkPastels
-Font=Fira Code,10,-1,5,57,0,0,0,0,0
+Font=Fira Code,10,-1,5,57,0,0,0,0,0,Medium
 LineSpacing=1
+UseFontLineChararacters=true
 
 [General]
 Command=/bin/bash

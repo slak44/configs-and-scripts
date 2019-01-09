@@ -11,8 +11,8 @@ white="\[\033[38;2;255;255;255m\]"
 reset="\[\033[0m\]"
 user=$([ $isRoot ] && echo "$white" || echo "$base")
 
-sep=$([ $noFiraCode ] && echo "$accent>" || echo -e "$accent\uE0B1")
-branchIcon=$([ $noFiraCode ] && echo "${white}branch " || echo -e "${white}\uE0A0")
+sep=$([ $noFiraCode ] && echo "$accent>" || echo -e "$accent\356\202\261")
+branchIcon=$([ $noFiraCode ] && echo "${white}branch " || echo -e "${white}\356\202\240")
 
 declare -a upstream
 declare -a branchAB
