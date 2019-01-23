@@ -33,6 +33,7 @@ src2dest["Scripts/js/share.js"]="$HOME/Scripts/share"
 src2dest["Scripts/js/share-file.js"]="$HOME/Scripts/share-file"
 src2dest["Scripts/js/cwd2mp3.js"]="$HOME/Scripts/cwd2mp3"
 src2dest["Scripts/hwmon-perms.sh"]="$HOME/Scripts/hwmon-perms"
+src2dest["Scripts/try-cycle-swap.sh"]="$HOME/Scripts/try-cycle-swap"
 
 dir=$(dirname "$0")
 for key in "${!src2dest[@]}"

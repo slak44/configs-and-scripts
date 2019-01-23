@@ -11,11 +11,11 @@ ShowWindowTitleOnTitleBar=true
 
 [MainWindow]
 Height 1024=999
-Height 1080=1022
+Height 1080=894
 Height 720=480
-State=AAAA/wAAAAD9AAAAAAAAB4AAAAPoAAAABAAAAAQAAAAIAAAACPwAAAAA
+State=AAAA/wAAAAD9AAAAAAAAB4AAAANoAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 Width 1280=1248
 Width 1920=1920
 Window-Maximized 1024x1280=true
-Window-Maximized 1080x1920=true
+Window-Maximized 1080x1920=false
