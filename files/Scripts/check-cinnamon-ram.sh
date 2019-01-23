@@ -19,4 +19,3 @@ if [[ "$IS_MEM_MORE_THAN_1GB" == 1 ]] ; then
 else
   echo "It's less than 1GB, all is well"
 fi
-

@@ -5,4 +5,3 @@ xinput set-prop $mouseId "libinput Accel Profile Enabled" 0, 1
 xinput set-prop $mouseId "libinput Accel Speed" 0
 # Default speed, let mouse deal with it
 xinput set-prop $mouseId "libinput Accel Speed" 0
-
