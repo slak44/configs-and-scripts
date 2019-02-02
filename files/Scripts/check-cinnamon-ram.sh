@@ -1,9 +1,6 @@
 #!/bin/bash
 
-date > /tmp/ran-script
-
-user=$(whoami)
-CINNAMON_PROC_ID=$(ps aux | grep 'cinnamon --replace' | grep -E "$user\s+[0-9]+" -o | grep -E "[0-9]+" -o | head -1)
+CINNAMON_PROC_ID=$(ps -C cinnamon | tail +2 | cut -d' ' -f2)
 
 echo "Found cinnamon at: $CINNAMON_PROC_ID"
 
