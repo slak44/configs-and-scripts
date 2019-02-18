@@ -7,7 +7,8 @@ basicPackageList=(
 # Basic X stuff
 basicVisualPackageList=(
   xorg-xinput xdg-utils libnotify wmctrl konsole chromium parcellite
-  gthumb gimp redshift deepin-screenshot file-roller gedit)
+  gthumb gimp redshift deepin-screenshot file-roller gedit
+  adapta-kde kvantum-theme-adapta)
 # Non-essential non-X stuff
 extraPackageList=(
   make ninja cmake archey3 unrar transmission-cli arp-scan otf-fira-code pigz
