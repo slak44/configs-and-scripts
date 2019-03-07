@@ -16,5 +16,5 @@ require('http').createServer((req, res) => {
   }
   res.statusCode = 200;
   res.setHeader('Content-Type', mime);
-  res.end(require('fs').readFileSync(path).toString());
+  res.end(require('fs').readFileSync(path));
 }).listen(port);
