@@ -3,7 +3,7 @@
 
 const port = process.env.PORT || 3000;
 const path = process.argv[2];
-const mime = require('child_process').execSync(`xdg-mime query filetype ${path}`).toString().trim();
+const mime = require('child_process').execSync(`xdg-mime query filetype "${path}"`).toString().trim();
 console.log(`Serving "${path}" as "${mime}" on ${port}`);
 
 require('http').createServer((req, res) => {
