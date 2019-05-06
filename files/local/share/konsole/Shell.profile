@@ -2,7 +2,7 @@
 BoldIntense=false
 ColorScheme=DarkPastels
 Font=Fira Code,10,-1,5,57,0,0,0,0,0,Medium
-LineSpacing=1
+LineSpacing=2
 UseFontLineChararacters=true
 
 [General]
@@ -11,6 +11,7 @@ Environment=COLORFUL=true
 LocalTabTitleFormat=%u - %d : %n
 Name=Shell
 Parent=FALLBACK/
+TerminalCenter=false
 TerminalRows=40
 
 [Interaction Options]

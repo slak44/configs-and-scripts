@@ -25,7 +25,7 @@ alias radeontop='radeontop --color'
 alias large-files='sudo du --si --one-file-system --threshold 1GB'
 alias list-npm-globals="npm ls -g --depth=0 | tail -n +2 | sed -E 's/.*─ (.*?)@.*/\1/g' | tr '\n' ' '"
 alias update-npm-globals='sudo npm install -g $(list-npm-globals)'
-alias upd='trizen -Syu && ssh pi@pi <<< "trizen -Syu; exit"'
+alias upd='trizen -Syu'
 alias gpu-high-perf='echo "high" | sudo tee /sys/class/drm/card1/device/power_dpm_force_performance_level'
 alias open="xdg-open"
 alias netscan="sudo arp-scan --localnet --interface=enp0s25"
