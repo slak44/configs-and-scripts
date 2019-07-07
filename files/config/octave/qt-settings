@@ -836,6 +836,9 @@ Text\style0\font=DejaVu Sans Mono, 10, 0, 0, 0
 Text\style0\font2=DejaVu Sans Mono, 10, 0, 0, 0
 Text\style0\paper=16777215
 
+[annotation]
+geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\x1\r\0\0\x1\xa2\0\0\x3y\0\0\x3L\0\0\x1\r\0\0\x1\xb7\0\0\x3y\0\0\x3L\0\0\0\x2\0\0\0\0\a\x80\0\0\x1\r\0\0\x1\xb7\0\0\x3y\0\0\x3L)
+
 [editor]
 always_reload_changed_files=false
 auto_endif=1
@@ -892,7 +895,7 @@ tab_width=2
 wrap_lines=false
 
 [filesdockwidget]
-column_state=@ByteArray(\0\0\0\xff\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x4\xe\0\0\0\x3\0\0\0\x1\0\0\0\x64\0\0\0\x2\0\0\0\x64\0\0\0\x3\0\0\0\x64\0\xf\xff\xff\0\0\0\x4\x1\x1\0\x1\0\0\0\0\0\0\0\0\0\0\0\0\x64\xff\xff\xff\xff\0\0\0\x81\0\0\0\0\0\0\0\x4\0\xf\xff\xff\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\x3\xe8\0\0\xf\xff\xff)
+column_state=@ByteArray(\0\0\0\xff\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x4\xe\0\0\0\x3\0\0\0\x3\0\0\0\x64\0\0\0\x1\0\0\0\x64\0\0\0\x2\0\0\0\x64\0\xf\xff\xff\0\0\0\x4\x1\x1\0\x1\0\0\0\0\0\0\0\0\0\0\0\0\x64\xff\xff\xff\xff\0\0\0\x81\0\0\0\0\0\0\0\x4\0\xf\xff\xff\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\0\0\0\0\0\x1\0\0\0\0\0\0\x3\xe8\0\0\xf\xff\xff)
 mru_dir_list=/home/slak/Things/hold/MN/mn-tema2, /home/slak/Things/hold/MN/lab09, /home/slak, /home/slak/Desktop/MN/out, /home/slak/Desktop/MN, /home/slak/Desktop, /home/slak/Desktop/mn3, /tmp, /home
 restore_last_dir=false
 showFileSize=false
@@ -915,7 +918,7 @@ mru_list=@Invalid()
 [news]
 allow_web_connection=true
 last_news_item=12
-last_time_checked=@DateTime(\0\0\0\x10\0\0\0\0\0\0%\x83\xf1\x3\x8b\xef\xbd\0)
+last_time_checked=@DateTime(\0\0\0\x10\0\0\0\0\0\0%\x84\x6\x2$O2\0)
 
 [settings]
 geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\n\x12\0\0\0\xdf\0\0\r\xf9\0\0\x3T\0\0\n\x12\0\0\0\xfd\0\0\r\xf9\0\0\x3T\0\0\0\0\0\0\0\0\a\x80\0\0\n\x12\0\0\0\xfd\0\0\r\xf9\0\0\x3T)

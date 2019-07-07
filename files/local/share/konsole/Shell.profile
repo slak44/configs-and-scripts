@@ -1,6 +1,6 @@
 [Appearance]
 BoldIntense=false
-ColorScheme=DarkPastels
+ColorScheme=AdaptaNokto
 Font=Fira Code,10,-1,5,57,0,0,0,0,0,Medium
 LineSpacing=2
 UseFontLineChararacters=true
@@ -20,6 +20,7 @@ TripleClickMode=0
 
 [Scrolling]
 HistoryMode=2
+HistorySize=100000
 ScrollFullPage=true
 
 [Terminal Features]
