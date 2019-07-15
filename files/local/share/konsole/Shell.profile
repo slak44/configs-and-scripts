@@ -5,13 +5,18 @@ Font=Fira Code,10,-1,5,57,0,0,0,0,0,Medium
 LineSpacing=2
 UseFontLineChararacters=true
 
+[Cursor Options]
+CursorShape=0
+
 [General]
 Command=/bin/bash
+DimWhenInactive=false
 Environment=COLORFUL=true
 LocalTabTitleFormat=%u - %d : %n
 Name=Shell
 Parent=FALLBACK/
 TerminalCenter=false
+TerminalMargin=2
 TerminalRows=40
 
 [Interaction Options]
