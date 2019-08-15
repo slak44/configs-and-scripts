@@ -46,3 +46,4 @@ nnoremap [1;5F G
 inoremap [1;5H <Esc>gg<Insert>
 nnoremap [1;5H gg
 
+:startinsert
