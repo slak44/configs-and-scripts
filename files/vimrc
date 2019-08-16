@@ -45,5 +45,8 @@ nnoremap [1;5F G
 " CTRL-Home goes to start of file
 inoremap [1;5H <Esc>gg<Insert>
 nnoremap [1;5H gg
+" CTRL-W closes file
+inoremap <C-W> <Esc>:q<Enter><Insert>
+nnoremap <C-W> :q<Enter>
 
 :startinsert
