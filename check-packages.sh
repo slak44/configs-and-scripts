@@ -15,7 +15,7 @@ extraPackageList=(
   iotop radeontop)
 # Non-essential X stuff
 extraVisualPackageList=(
-  libreoffice-still lollypop transmission-gtk gparted liferea
+  libreoffice-still lollypop transmission-gtk gparted akregator
   steam steam-native-runtime gnome-disks)
 aurPackages=(trizen discord atom-editor-bin jetbrains-toolbox)
 
