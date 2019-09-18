@@ -1,7 +1,7 @@
 [Appearance]
 BoldIntense=false
 ColorScheme=AdaptaNokto
-Font=Fira Code,10,-1,5,57,0,0,0,0,0,Medium
+Font=Fira Code Retina,10,-1,5,53,0,0,0,0,0,Regular
 LineSpacing=2
 UseFontLineChararacters=true
 
