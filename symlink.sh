@@ -8,6 +8,7 @@ fi
 declare -A src2dest
 src2dest["bash_profile"]="$HOME/.bash_profile"
 src2dest["bashrc"]="$HOME/.bashrc"
+src2dest["XCompose"]="$HOME/.XCompose"
 src2dest["gen-ps1.sh"]="$HOME/.gen-ps1.sh"
 src2dest["vimrc"]="$HOME/.vimrc"
 src2dest["eslintrc.json"]="$HOME/.eslintrc.json"
