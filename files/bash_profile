@@ -30,6 +30,9 @@ alias gpu-high-perf='echo "high" | sudo tee /sys/class/drm/card1/device/power_dp
 alias open="xdg-open"
 alias netscan="sudo arp-scan --localnet --interface=enp0s25"
 
+# Enable color
+export BAT_THEME="OneHalfDark"
+
 # Config
 export TERM=konsole
 export EDITOR=vim
