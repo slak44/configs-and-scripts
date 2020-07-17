@@ -56,7 +56,7 @@ commitsAndWorktreeLength=$(removeExtraStuffLength "$commitsAndWorktreeText")
 spaceLeftForCmd=$((freeSpace - branchTextLength - commitsAndWorktreeLength))
 shouldPutCmdOnNext=$([[ $((spaceLeftForCmd < totalLength / 2)) == "1" ]] && echo "true" || echo '')
 
-firstLineLen=$((preludeMaxLen + branchTextLength + commitsAndWorktreeLength))
+firstLineLen=$((preludeMaxLen + branchTextLength + commitsAndWorktreeLength + 10))
 
 # Print anyway
 echo -n "$sep $user\u$accent@$base\h $sep $base\w $sep ${branchText}"
