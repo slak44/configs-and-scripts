@@ -12,7 +12,7 @@ basicVisualPackageList=(
 # Non-essential non-X stuff
 extraPackageList=(
   make ninja cmake archey3 unrar transmission-cli arp-scan otf-fira-code pigz
-  iotop radeontop bat)
+  iotop radeontop bat kscript smem)
 # Non-essential X stuff
 extraVisualPackageList=(
   libreoffice-still lollypop transmission-gtk gparted akregator
