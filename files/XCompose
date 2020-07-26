@@ -1,6 +1,9 @@
 # Import default locale
 include "%L"
 
+# ¯\_(ツ)_/¯
+<Multi_key> <s> <h> : "¯\\_(ツ)_/¯"
+
 # Override diacritics to use comma variants rather than cedilla variants
 <Multi_key> <S> <comma> : "Ș" U0218
 <Multi_key> <s> <comma> : "ș" U0219
