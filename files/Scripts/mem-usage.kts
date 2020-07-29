@@ -1,10 +1,11 @@
 import java.io.File
+import java.nio.file.Files
 import kotlin.math.abs
 
-val smem: Process = ProcessBuilder("sudo", "smem", "-H", "-s", "uss", "-c", "uss pid user command", "-a")
-    .redirectOutput(ProcessBuilder.Redirect.PIPE)
-    .start()
-smem.waitFor()
+//val smem: Process = ProcessBuilder("sudo", "smem", "-H", "-s", "uss", "-c", "uss pid user command", "-a")
+//    .redirectOutput(ProcessBuilder.Redirect.PIPE)
+//    .start()
+//smem.waitFor()
 
 data class MemEntry(
     val uss: Int,
@@ -21,6 +22,10 @@ sealed class ProcFilter {
     return Generic("$desc, ${other.desc}") { test(it) || other.test(it) }
   }
 
+  operator fun times(other: ProcFilter): ProcFilter {
+    return Generic("$desc, ${other.desc}") { test(it) && other.test(it) }
+  }
+
   data class Generic(override val desc: String, override val test: (entry: MemEntry) -> Boolean) : ProcFilter()
 
   data class Name(val name: String) : ProcFilter() {
@@ -30,7 +35,7 @@ sealed class ProcFilter {
 
   data class User(val user: String) : ProcFilter() {
     override val desc = "user: $user"
-    override val test = { it: MemEntry -> user in it.user }
+    override val test = { it: MemEntry -> it.user in user }
   }
 
   data class Size(override val desc: String, val sizeTest: (Int) -> Boolean) : ProcFilter() {
@@ -81,10 +86,10 @@ data class ResultItem(val entries: List<MemEntry>, val rule: ProcRule?) {
   override fun toString() = "$totalUss kB, by $rule: $entries"
 }
 
-val entries = smem.inputStream.bufferedReader().readLines().map(String::trim).map { line ->
-  val items = line.split(' ').filter { it.isNotBlank() }
-  MemEntry(items[0].toInt(), items[1].toInt(), items[2], items.drop(3).joinToString(" "))
-}.associateBy { it.pid }
+//val entries = smem.inputStream.bufferedReader().readLines().map(String::trim).map { line ->
+//  val items = line.split(' ').filter { it.isNotBlank() }
+//  MemEntry(items[0].toInt(), items[1].toInt(), items[2], items.drop(3).joinToString(" "))
+//}.associateBy { it.pid }
 
 fun readPidChildren(pid: Int): List<Int> {
   val tasks = File("/proc/$pid/task").listFiles()!!
@@ -94,9 +99,26 @@ fun readPidChildren(pid: Int): List<Int> {
 
 val tree = mutableMapOf<Int, List<Int>>()
 
+fun readProc(pid: Int): MemEntry {
+  val base = File("/proc/$pid")
+  val pss = File(base, "smaps").readLines().asSequence()
+      .map { it.trim() }
+      .filter { it.startsWith("Pss") }
+      .map { it.split(":") }
+      .filter { it.size >= 2 }
+      .map { it[1].trim().split(" ")[0].trim().toInt() }
+      .sum()
+  val command = File(base, "cmdline").readText().replace('\u0000', ' ')
+  val user = Files.getOwner(base.toPath()).name
+  return MemEntry(pss, pid, user, command)
+}
+
+val entries = mutableMapOf<Int, MemEntry>()
+
 val allProcesses = File("/proc").list()!!.filter { it[0].isDigit() }.map(String::toInt)
 for (pid in allProcesses) {
   tree[pid] = readPidChildren(pid)
+  entries[pid] = readProc(pid)
 }
 
 val rules = listOf(
@@ -106,16 +128,26 @@ val rules = listOf(
     ProcRule.Filter(nameFilter("konsole"), mergeSubtree = false, crossTree = true),
     ProcRule.Filter(nameFilter("akregator"), mergeSubtree = true, crossTree = true),
     ProcRule.Filter(nameFilter("Discord"), mergeSubtree = true, crossTree = false),
+    ProcRule.Filter(nameFilter("slack"), mergeSubtree = true, crossTree = false),
+    ProcRule.Filter(nameFilter("postgres"), mergeSubtree = false, crossTree = true),
+    ProcRule.Filter(nameFilter("docker"), mergeSubtree = false, crossTree = true),
     ProcRule.Filter(nameFilter("steam.sh"), mergeSubtree = true, crossTree = false),
-    ProcRule.Filter(nameFilter("IDEA-U"), mergeSubtree = true, crossTree = false),
+    ProcRule.Filter(nameFilter("scripts/idea", "IDEA-U"), mergeSubtree = true, crossTree = false),
+    ProcRule.Filter(nameFilter("scripts/idea", "WebStorm"), mergeSubtree = true, crossTree = false),
     ProcRule.Filter(nameFilter("jetbrains-toolbox"), mergeSubtree = true, crossTree = true),
     ProcRule.Filter(nameFilter("Xorg"), mergeSubtree = false, crossTree = false),
     merge(
         ProcRule.Filter(nameFilter("dhcpcd"), mergeSubtree = true, crossTree = false),
         ProcRule.Filter(nameFilter("gvfs"), mergeSubtree = true, crossTree = true),
+        ProcRule.Filter(nameFilter("systemd"), mergeSubtree = false, crossTree = true),
+        ProcRule.Filter(nameFilter("pulseaudio"), mergeSubtree = true, crossTree = false),
         ProcRule.Filter(ProcFilter.Pid("children of init") { it in tree.getValue(1) }, mergeSubtree = false, crossTree = true)
     ),
-    ProcRule.Filter(ProcFilter.Size("size: <5MB") { it < 5_000 }, mergeSubtree = false, crossTree = true)
+    merge(
+        ProcRule.Filter(ProcFilter.Size("size: <5MB") { it < 5_000 }, mergeSubtree = false, crossTree = true),
+        ProcRule.Filter(ProcFilter.Size("size: <20MB") { it < 20_000 }, mergeSubtree = false, crossTree = true)
+    ),
+    ProcRule.Filter(nameFilter("mem-usage"), mergeSubtree = false, crossTree = false)
 )
 
 val outputs = mutableListOf<ResultItem>()

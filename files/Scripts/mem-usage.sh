@@ -1,4 +1,4 @@
 #!/bin/bash
 
-kscript ~/Scripts/mem-usage.kts
+kscript /home/slak/Scripts/mem-usage.kts
 
