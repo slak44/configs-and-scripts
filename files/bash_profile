@@ -54,5 +54,8 @@ PROMPT_COMMAND="PS1=\"\$($HOME/.gen-ps1.sh $0)\""
 # Disable CTRL-S/CTRL-Q output on/off commands
 stty -ixon
 
+# Git auto completion
+source /usr/share/bash-completion/completions/git
+
 # This would start X when logging in on tty1, except the login manager does it for us
 #[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
