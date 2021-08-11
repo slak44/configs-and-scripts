@@ -129,6 +129,7 @@ val rules = listOf(
     ProcRule.Filter(nameFilter("akregator"), mergeSubtree = true, crossTree = true),
     ProcRule.Filter(nameFilter("Discord"), mergeSubtree = true, crossTree = false),
     ProcRule.Filter(nameFilter("slack"), mergeSubtree = true, crossTree = false),
+    ProcRule.Filter(nameFilter("teams"), mergeSubtree = true, crossTree = false),
     ProcRule.Filter(nameFilter("postgres"), mergeSubtree = false, crossTree = true),
     ProcRule.Filter(nameFilter("docker"), mergeSubtree = false, crossTree = true),
     ProcRule.Filter(nameFilter("steam.sh"), mergeSubtree = true, crossTree = false),

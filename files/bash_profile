@@ -28,7 +28,7 @@ alias update-npm-globals='sudo npm install -g $(list-npm-globals)'
 alias upd='trizen -Syu'
 alias gpu-high-perf='echo "high" | sudo tee /sys/class/drm/card1/device/power_dpm_force_performance_level'
 alias open="xdg-open"
-alias netscan="sudo arp-scan --localnet --interface=enp0s25"
+alias netscan="sudo arp-scan --localnet --interface=enp6s0"
 
 # Enable color
 export BAT_THEME="OneHalfDark"
@@ -46,7 +46,8 @@ export PATH
 
 # Stupid hack
 # Doesn't work with ssh or with nested shells, or literally anything more complicated than running in a real terminal
-TERM_NAME=$(basename "$(cat "/proc/$PPID/comm")")
+FOUND_TERM_NAME=$(basename "$(cat "/proc/$PPID/comm")")
+TERM_NAME="${TERM_NAME:-$FOUND_TERM_NAME}"
 export TERM_NAME
 
 PROMPT_COMMAND="PS1=\"\$($HOME/.gen-ps1.sh $0)\""

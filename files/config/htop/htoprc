@@ -22,5 +22,5 @@ color_scheme=0
 delay=15
 left_meters=CPU Memory Swap Hostname Uptime Clock
 left_meter_modes=1 1 1 2 2 2
-right_meters=LeftCPUs RightCPUs
+right_meters=LeftCPUs2 RightCPUs2
 right_meter_modes=1 1
