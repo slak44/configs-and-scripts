@@ -44,12 +44,6 @@ export BROWSER=chromium
 PATH=$HOME/Scripts/path-overrides:$PATH:$HOME/Scripts:/opt/jetbrains-toolbox/scripts
 export PATH
 
-# Stupid hack
-# Doesn't work with ssh or with nested shells, or literally anything more complicated than running in a real terminal
-FOUND_TERM_NAME=$(basename "$(cat "/proc/$PPID/comm")")
-TERM_NAME="${TERM_NAME:-$FOUND_TERM_NAME}"
-export TERM_NAME
-
 PROMPT_COMMAND="PS1=\"\$($HOME/.gen-ps1.sh $0)\""
 
 # Disable CTRL-S/CTRL-Q output on/off commands

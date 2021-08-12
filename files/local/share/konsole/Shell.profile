@@ -11,7 +11,7 @@ CursorShape=0
 [General]
 Command=/bin/bash
 DimWhenInactive=false
-Environment=COLORFUL=true
+Environment=COLORFUL=true,IS_DECENT_TERMINAL=true
 LocalTabTitleFormat=%u - %d : %n
 Name=Shell
 Parent=FALLBACK/

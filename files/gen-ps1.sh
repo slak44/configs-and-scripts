@@ -1,5 +1,5 @@
 #!/bin/bash
-isGoodTerminal=$([[ ${TERM_NAME} == 'konsole' ]] || [[ ${TERM_NAME} == 'java' ]] && echo true)
+isGoodTerminal=$([[ ${IS_DECENT_TERMINAL} == 'true' ]] && echo true)
 noFiraCode=$([[ ! ${isGoodTerminal} ]] && echo true)
 hasTrueColor=$([[ "$(echo $1 | head -c 1)" = "-" ]] && echo "false" || echo "true")
 
@@ -56,7 +56,7 @@ commitsAndWorktreeLength=$(removeExtraStuffLength "$commitsAndWorktreeText")
 spaceLeftForCmd=$((freeSpace - branchTextLength - commitsAndWorktreeLength))
 shouldPutCmdOnNext=$([[ $((spaceLeftForCmd < totalLength / 2)) == "1" ]] && echo "true" || echo '')
 
-firstLineLen=$((preludeMaxLen + branchTextLength + commitsAndWorktreeLength + 10))
+firstLineLen=$((preludeMaxLen + branchTextLength + commitsAndWorktreeLength + 30))
 
 # Print anyway
 echo -n "$sep $user\u$accent@$base\h $sep $base\w $sep ${branchText}"
