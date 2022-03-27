@@ -15,6 +15,7 @@ Environment=COLORFUL=true,IS_DECENT_TERMINAL=true
 LocalTabTitleFormat=%u - %d : %n
 Name=Shell
 Parent=FALLBACK/
+StartInCurrentSessionDir=true
 TerminalCenter=false
 TerminalMargin=2
 TerminalRows=40
