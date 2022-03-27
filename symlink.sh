@@ -39,6 +39,9 @@ src2dest["Scripts/js/share-file.js"]="$HOME/Scripts/share-file"
 src2dest["Scripts/js/cwd2mp3.js"]="$HOME/Scripts/cwd2mp3"
 src2dest["Scripts/hwmon-perms.sh"]="$HOME/Scripts/hwmon-perms"
 src2dest["Scripts/try-cycle-swap.sh"]="$HOME/Scripts/try-cycle-swap"
+src2dest["Scripts/hibernate-mode-reboot.sh"]="$HOME/Scripts/hibernate-mode-reboot"
+src2dest["Scripts/hibernate-mode-reboot.conf"]="$HOME/Scripts/hibernate-mode-reboot.conf"
+src2dest["Scripts/hibernate-to-windows.sh"]="$HOME/Scripts/hibernate-to-windows"
 
 dir=$(dirname "$0")
 for key in "${!src2dest[@]}"
