@@ -59,5 +59,17 @@ stty -ixon
 # Git auto completion
 source /usr/share/bash-completion/completions/git
 
+# Terraform auto completion
+if command -v terraform &> /dev/null
+then
+  complete -C /usr/bin/terraform terraform
+fi
+
+# Load Angular CLI autocompletion.
+if command -v ng &> /dev/null
+then
+  source <(ng completion script)
+fi
+
 # This would start X when logging in on tty1, except the login manager does it for us
 #[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
