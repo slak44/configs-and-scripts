@@ -4,6 +4,9 @@ include "%L"
 # ¯\_(ツ)_/¯
 <Multi_key> <s> <h> : "¯\\_(ツ)_/¯"
 
+# euro symbol
+<Multi_key> <e> <u> <r> : "€" U20AC
+
 # Override diacritics to use comma variants rather than cedilla variants
 <Multi_key> <S> <comma> : "Ș" U0218
 <Multi_key> <s> <comma> : "ș" U0219
@@ -67,3 +70,8 @@ include "%L"
 <Multi_key> <g> <q> <s> : "ς"    U03C2    # GREEK SMALL LETTER FINAL SIGMA
 <Multi_key> <g> <q> <x> : "ξ"    U03BE    # GREEK SMALL LETTER XI
 
+# Some emoji
+<Multi_key> <e> <m> <o> <colon> <parenright>        : "🙂"
+<Multi_key> <e> <m> <o> <colon> <apostrophe> <D>    : "😂"
+<Multi_key> <e> <m> <o> <colon> <Down>              : "😔"
+<Multi_key> <e> <m> <o> <colon> <t> <h> <i> <n> <k> : "🤔"
