@@ -71,5 +71,8 @@ then
   source <(ng completion script)
 fi
 
+eval "$(thefuck --alias)"
+eval "$(zoxide init --cmd cd bash)"
+
 # This would start X when logging in on tty1, except the login manager does it for us
 #[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

@@ -3,7 +3,7 @@
 # Basic non-X stuff
 basicPackageList=(
   sudo git nodejs npm nano vim java-runtime-common htop
-  rsync tokei imagemagick grub ffmpeg)
+  rsync tokei imagemagick grub ffmpeg zoxide thefuck)
 # Basic X stuff
 basicVisualPackageList=(
   xorg-xinput xdg-utils libnotify wmctrl konsole chromium parcellite
