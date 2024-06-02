@@ -46,6 +46,10 @@ export PATH
 
 PROMPT_COMMAND="PS1=\"\$($HOME/.gen-ps1.sh $0)\""
 
+# Unlimited history
+HISTSIZE=-1
+HISTFILESIZE=-1
+
 # Disable CTRL-S/CTRL-Q output on/off commands
 stty -ixon
 
