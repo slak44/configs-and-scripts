@@ -7,6 +7,9 @@ export QT_STYLE_OVERRIDE=kvantum
 alias make='make -j8'
 alias ninja='ninja -j8'
 
+# Make NVM available non-interactively
+source /usr/share/nvm/init-nvm.sh
+
 # If not running interactively, don't do anything else
 [[ $- != *i* ]] && return
 

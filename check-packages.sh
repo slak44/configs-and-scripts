@@ -17,7 +17,8 @@ extraPackageList=(
 extraVisualPackageList=(
   libreoffice-still lollypop transmission-gtk gparted akregator
   steam steam-native-runtime gnome-disks)
-aurPackages=(trizen discord atom-editor-bin jetbrains-toolbox)
+# AUR packages
+aurPackages=(trizen discord jetbrains-toolbox nvm)
 
 echo "Install basic packages?"
 select yn in "Yes" "No"; do
