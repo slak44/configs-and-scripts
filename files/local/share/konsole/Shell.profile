@@ -4,6 +4,8 @@ ColorScheme=AdaptaNokto
 Font=Fira Code Retina,10,-1,5,53,0,0,0,0,0,Regular
 LineSpacing=2
 UseFontLineChararacters=true
+WordMode=true
+WordModeAttr=false
 
 [Cursor Options]
 CursorShape=0
